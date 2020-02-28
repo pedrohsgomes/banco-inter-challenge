@@ -13,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -33,11 +35,20 @@ public class Usuario implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+	
+	@NotBlank
+    @Size(min = 0, max = 400)
 	@Column(length = 400)
     private String nome;
+	
+	@NotBlank
+    @Size(min = 0, max = 850)
 	@Column(length = 850)
     private String email;
+	
     @JsonIgnore
+    @NotBlank
+    @Size(min = 0, max = 500)
     @Column(length = 500)
     private String chavePublica;
     
