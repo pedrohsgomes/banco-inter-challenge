@@ -47,13 +47,13 @@ public class TestGeneric<T> {
     }
     
     public String deleteTest(String path, ResultMatcher matcher) throws Exception{
-        LOGGER.info("<< Initializing GET test from path {}", path);
+        LOGGER.info("<< Initializing DELETE test from path {}", path);
         ResultActions result = this.mockMvc.perform(
         		MockMvcRequestBuilders.delete(path).accept(MediaType.ALL)
         		.contentType(MediaType.APPLICATION_JSON)
         );
         result.andExpect(matcher);
-        LOGGER.info(">> Finished GET test");
+        LOGGER.info(">> Finished DELETE test");
         return result.andReturn().getResponse().getContentAsString();        
     }
     
@@ -110,7 +110,7 @@ public class TestGeneric<T> {
     }
     
     public String deleteTest(String path,  String paramName, String param, ResultMatcher matcher) throws Exception{
-        LOGGER.info(">> Initializing POST test from path {}", path);
+        LOGGER.info(">> Initializing DELETE test from path {}", path);
         ResultActions result = this.mockMvc.perform(
         		MockMvcRequestBuilders.delete(path)
         		.accept(MediaType.ALL)
@@ -118,7 +118,7 @@ public class TestGeneric<T> {
         		.param(paramName, param)
         );
         result.andExpect(matcher);
-        LOGGER.info(">> Finished POST test");
+        LOGGER.info(">> Finished DELETE test");
         return result.andReturn().getResponse().getContentAsString();        
     }
     

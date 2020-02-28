@@ -54,13 +54,13 @@ public class UsuarioService {
 
 	@Transactional
 	public Usuario get(Long idUsuario) {
-		Usuario usuario = usuarioRepository.getOne(idUsuario);
+		Usuario usuario = usuarioRepository.findById(idUsuario).orElse(null);
 		return usuario;
 	}
 
 	@Transactional
 	public Usuario criptografar(@RequestParam Long idUsuario, @RequestParam String chavePublica) {
-		Usuario usuario = usuarioRepository.getOne(idUsuario);
+		Usuario usuario = usuarioRepository.findById(idUsuario).orElse(null);
 		
 		if (usuario == null || usuario.getId() == null) {
 			return null;
@@ -109,7 +109,7 @@ public class UsuarioService {
 
 	@Transactional
 	public List<Calculo> getCalculos(@RequestParam Long idUsuario) {
-		Usuario usuario = usuarioRepository.getOne(idUsuario);
+		Usuario usuario = usuarioRepository.findById(idUsuario).orElse(null);
 		
 		if (usuario == null || usuario.getId() == null) {
 			return null;

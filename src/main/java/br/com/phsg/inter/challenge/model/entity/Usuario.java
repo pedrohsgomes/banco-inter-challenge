@@ -25,7 +25,7 @@ import lombok.Data;
  */
 @Entity
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties(ignoreUnknown = true, value = {"hibernateLazyInitializer", "handler"})
 public class Usuario implements Serializable {
 
 	private static final long serialVersionUID = 7742100101351765959L;

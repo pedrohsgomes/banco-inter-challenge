@@ -72,15 +72,15 @@ public class ApiRequestController {
 	
 	@GetMapping("/usuarios/{id}/criptografar")
 	@ResponseBody
-	public Usuario criptografar(@PathVariable Long idUsuario, @RequestParam String chavePublica) {
-		Usuario usuario = usuarioService.criptografar(idUsuario, chavePublica);
+	public Usuario criptografar(@PathVariable Long id, @RequestParam String chavePublica) {
+		Usuario usuario = usuarioService.criptografar(id, chavePublica);
 		return usuario;
 	}
 	
 	@GetMapping("/usuarios/{id}/calculos")
 	@ResponseBody
-	public List<Calculo> getCalculosUsuario(@PathVariable Long idUsuario) {
-		List<Calculo> calculos = usuarioService.getCalculos(idUsuario);
+	public List<Calculo> getCalculosUsuario(@PathVariable Long id) {
+		List<Calculo> calculos = usuarioService.getCalculos(id);
 		return calculos;
 	}
 

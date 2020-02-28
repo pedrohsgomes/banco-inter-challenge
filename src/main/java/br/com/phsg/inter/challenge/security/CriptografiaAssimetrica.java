@@ -40,7 +40,7 @@ public class CriptografiaAssimetrica {
 	private static final String spaceMarker = " ";
 	private static final String enterLinuxMarker = "\r\n";
 	
-	private static final String internalPublicKey = "-----BEGIN PUBLIC KEY-----\r\n"
+	public static final String internalPublicKey = "-----BEGIN PUBLIC KEY-----\r\n"
 			+ "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt7PbmmgOHpHw0eUdq3mX\r\n"
 			+ "LvKZnm/+aiR4l+DJQG/TNUhsuPwml71cFYK6VxIEjH6hjCN4ewznM80jJOtwAFMV\r\n"
 			+ "RzFTsTDdKLB23/WnYutABhaXhEyGNdxX4pVNAAllkSYEGNh/mCl3B0XC3uwRUjOs\r\n"
@@ -49,7 +49,7 @@ public class CriptografiaAssimetrica {
 			+ "il86+zQPQ+wLq1k0iGhfnW//1T4CmIKLT4UwFhg//yzqLjiMunEzw6j0xENtdxxP\r\n" + "rwIDAQAB\r\n"
 			+ "-----END PUBLIC KEY-----";
 
-	private static final String internalPrivateKey = "-----BEGIN RSA PRIVATE KEY-----\r\n"
+	public static final String internalPrivateKey = "-----BEGIN RSA PRIVATE KEY-----\r\n"
 			+ "MIIEowIBAAKCAQEAt7PbmmgOHpHw0eUdq3mXLvKZnm/+aiR4l+DJQG/TNUhsuPwm\r\n"
 			+ "l71cFYK6VxIEjH6hjCN4ewznM80jJOtwAFMVRzFTsTDdKLB23/WnYutABhaXhEyG\r\n"
 			+ "NdxX4pVNAAllkSYEGNh/mCl3B0XC3uwRUjOssrC8w/1396Lk83S0kW0W7tgnphDQ\r\n"
@@ -75,14 +75,6 @@ public class CriptografiaAssimetrica {
 			+ "A6wvoQKBgGgPpDedLSEiPGlsNQsF9irrzpOmOv/1X3wpG4lWe4fzEyoMXGil0T/Q\r\n"
 			+ "w6QbE2v6VjZTszuPW22CAi+DCpY9UbMrVFahTM8hB6ZYC8iGB+yYjt7wuguIgLqx\r\n"
 			+ "G4KpWo0efqo6ZytfJ855ll1Vh/3e31r3q5xbP3GsDLTTaKJlFOzs\r\n" + "-----END RSA PRIVATE KEY-----";
-	
-	private static String teste = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt7PbmmgOHpHw0eUdq3mX"
-			+ "LvKZnm/+aiR4l+DJQG/TNUhsuPwml71cFYK6VxIEjH6hjCN4ewznM80jJOtwAFMV"
-			+ "RzFTsTDdKLB23/WnYutABhaXhEyGNdxX4pVNAAllkSYEGNh/mCl3B0XC3uwRUjOs"
-			+ "srC8w/1396Lk83S0kW0W7tgnphDQKW9tS9AD96qWRszasY+xQjbrak6mkS7T1drr"
-			+ "frrRBRQynjDYszDKcjago0+YqDusjR70pQpUZwPImAWkX7nBue2NPOy+Roj8butJ"
-			+ "il86+zQPQ+wLq1k0iGhfnW//1T4CmIKLT4UwFhg//yzqLjiMunEzw6j0xENtdxxP" 
-			+ "rwIDAQAB";
 
 	public static final String ALGORITHM = "RSA";
 
@@ -168,7 +160,7 @@ public class CriptografiaAssimetrica {
 
 		PublicKey publickey;
 		try {
-			publickey = CriptografiaAssimetrica.genPublicKey(teste);
+			publickey = CriptografiaAssimetrica.genPublicKey(internalPublicKey);
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
 			e.printStackTrace();
 			throw new RuntimeException("Não possível gerar chave publica!");
