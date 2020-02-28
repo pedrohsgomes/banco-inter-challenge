@@ -46,6 +46,11 @@ ou
 * http://localhost:8081/inter-challenge/api-docs.yaml
 * http://localhost:8081/inter-challenge/swagger-ui
 
+###### Url de criptografia
+* Obs: parâmetro chavePublica tem que estar "encoded"
+* http://localhost:8081/inter-challenge/api/usuarios/{id}/criptografar?&chavePublica=
+* ex: http://localhost:8081/inter-challenge/api/usuarios/1/criptografar?&chavePublica=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt7PbmmgOHpHw0eUdq3mXLvKZnm%2F%2BaiR4l%2BDJQG%2FTNUhsuPwml71cFYK6VxIEjH6hjCN4ewznM80jJOtwAFMVRzFTsTDdKLB23%2FWnYutABhaXhEyGNdxX4pVNAAllkSYEGNh%2FmCl3B0XC3uwRUjOssrC8w%2F1396Lk83S0kW0W7tgnphDQKW9tS9AD96qWRszasY%2BxQjbrak6mkS7T1drrfrrRBRQynjDYszDKcjago0%2BYqDusjR70pQpUZwPImAWkX7nBue2NPOy%2BRoj8butJil86%2BzQPQ%2BwLq1k0iGhfnW%2F%2F1T4CmIKLT4UwFhg%2F%2FyzqLjiMunEzw6j0xENtdxxPrwIDAQAB
+
 
 ###### Configuração do banco H2
 * Schema: jdbc:h2:mem:bancointer-challenge-db

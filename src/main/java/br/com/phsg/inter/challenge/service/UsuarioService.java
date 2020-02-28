@@ -15,6 +15,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -64,6 +65,8 @@ public class UsuarioService {
 		
 		if (usuario == null || usuario.getId() == null) {
 			return null;
+		} else if (!Strings.isBlank(usuario.getChavePublica())) {
+			return usuario;
 		}
 		
 		usuario.setChavePublica(chavePublica);

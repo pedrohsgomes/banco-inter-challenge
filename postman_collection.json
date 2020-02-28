@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "55062e7c-ce2c-4f5d-98d3-f9eaad746a2e",
+		"name": "Banco Inter Integrations",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8a7a7655-d2fd-4998-af1f-a07a599637f6",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"nome\\\":\\\"Pedro\\\",\\\"email\\\":\\\"pedro@pedro.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Pedro\",\r\n  \"email\": \"pedro@pedro.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					]
+				},
+				"description": "Criar usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Outro Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cfb69286-6989-441b-83ec-a7d7b36afccb",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"nome\\\":\\\"Teste\\\",\\\"email\\\":\\\"teste@teste.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nome\": \"Teste\",\r\n  \"email\": \"teste@teste.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					]
+				},
+				"description": "Criar usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Mais Outro Usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "afa4ed41-9c95-40a2-9689-eec381e1f65f",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"id\\\":3,\\\"nome\\\":\\\"Excluir\\\",\\\"email\\\":\\\"excluir@excluir.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 3,\r\n  \"nome\": \"Excluir\",\r\n  \"email\": \"excluir@excluir.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					]
+				},
+				"description": "Criar usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Usuários",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4023e358-1a02-40dc-94b8-9bfd6a1e598e",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"nome\\\":\\\"Pedro\\\",\\\"email\\\":\\\"pedro@pedro.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"    ",
+							"    data = \"\\\"nome\\\":\\\"Teste\\\",\\\"email\\\":\\\"teste@teste.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"    ",
+							"    data = \"\\\"nome\\\":\\\"Excluir\\\",\\\"email\\\":\\\"excluir@excluir.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular dígito único",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "56b14f7a-b20f-47ac-b6c1-e341aa8c9beb",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(8);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/digito_unico?numero=9875&multiplicador=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"digito_unico"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "9875"
+						},
+						{
+							"key": "multiplicador",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular dígito único e associar a um usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cb12ea43-da5f-48f5-a8e4-98c55df4e9a0",
+						"exec": [
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData).to.eql(8);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/digito_unico?numero=9875&multiplicador=4&idUsuario=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"digito_unico"
+					],
+					"query": [
+						{
+							"key": "numero",
+							"value": "9875"
+						},
+						{
+							"key": "multiplicador",
+							"value": "4"
+						},
+						{
+							"key": "idUsuario",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criptografar dados de um usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e85906cc-d2a9-42bb-8b9d-908aeebc7895",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"id\\\":1,\\\"nome\\\":\\\"Pedro\\\",\\\"email\\\":\\\"pedro@pedro.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.not.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios/1/criptografar?chavePublica=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt7PbmmgOHpHw0eUdq3mXLvKZnm%2F%2BaiR4l%2BDJQG%2FTNUhsuPwml71cFYK6VxIEjH6hjCN4ewznM80jJOtwAFMVRzFTsTDdKLB23%2FWnYutABhaXhEyGNdxX4pVNAAllkSYEGNh%2FmCl3B0XC3uwRUjOssrC8w%2F1396Lk83S0kW0W7tgnphDQKW9tS9AD96qWRszasY%2BxQjbrak6mkS7T1drrfrrRBRQynjDYszDKcjago0%2BYqDusjR70pQpUZwPImAWkX7nBue2NPOy%2BRoj8butJil86%2BzQPQ%2BwLq1k0iGhfnW%2F%2F1T4CmIKLT4UwFhg%2F%2FyzqLjiMunEzw6j0xENtdxxPrwIDAQAB",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios",
+						"1",
+						"criptografar"
+					],
+					"query": [
+						{
+							"key": "chavePublica",
+							"value": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt7PbmmgOHpHw0eUdq3mXLvKZnm%2F%2BaiR4l%2BDJQG%2FTNUhsuPwml71cFYK6VxIEjH6hjCN4ewznM80jJOtwAFMVRzFTsTDdKLB23%2FWnYutABhaXhEyGNdxX4pVNAAllkSYEGNh%2FmCl3B0XC3uwRUjOssrC8w%2F1396Lk83S0kW0W7tgnphDQKW9tS9AD96qWRszasY%2BxQjbrak6mkS7T1drrfrrRBRQynjDYszDKcjago0%2BYqDusjR70pQpUZwPImAWkX7nBue2NPOy%2BRoj8butJil86%2BzQPQ%2BwLq1k0iGhfnW%2F%2F1T4CmIKLT4UwFhg%2F%2FyzqLjiMunEzw6j0xENtdxxPrwIDAQAB"
+						},
+						{
+							"key": null,
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar um usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e8084bb-4d37-4693-a8af-e315898ba5c0",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"id\\\":1\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Usuários um criptografado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "753fdf00-fd7b-43c1-8712-c6e9b5dbac09",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"id\\\":1\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"    ",
+							"    data = \"\\\"nome\\\":\\\"Teste\\\",\\\"email\\\":\\\"teste@teste.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"    ",
+							"    data = \"\\\"nome\\\":\\\"Excluir\\\",\\\"email\\\":\\\"excluir@excluir.com\\\"\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar um usuário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50ff56bc-fa76-4d78-b55e-fd35958fc8b9",
+						"exec": [
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios?idUsuario=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					],
+					"query": [
+						{
+							"key": "idUsuario",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Usuários Sem excluído",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "17fe219b-535a-4b90-a2c6-74fdeacff4e0",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    var data = \"\\\"id\\\":1\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"    ",
+							"    data = \"\\\"id\\\":2\";",
+							"    pm.expect(pm.response.text()).to.include(data);",
+							"    ",
+							"    pm.expect(pm.response.text()).have.any.key(\"1\", \"2\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/inter-challenge/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"inter-challenge",
+						"api",
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
