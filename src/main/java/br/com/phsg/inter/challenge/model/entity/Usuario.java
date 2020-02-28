@@ -47,7 +47,6 @@ public class Usuario implements Serializable {
     private String email;
 	
     @JsonIgnore
-    @NotBlank
     @Size(min = 0, max = 500)
     @Column(length = 500)
     private String chavePublica;
